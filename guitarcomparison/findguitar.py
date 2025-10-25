@@ -1,4 +1,10 @@
-import sys,urllib.request,json
+import sys,urllib.request,json,os,django
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE','guitarcomparison.settings')
+
+django.setup()
+
+from guitarguitar.models import Guitars
 
 def findGuitar(guitarName):
     print("function running")
@@ -10,7 +16,11 @@ def findGuitar(guitarName):
     for guitar in guitars:
         if (guitarName.lower() in guitar["ItemName"].lower()):
             print(guitar["ItemName"])
+            nguitar = Guitars.objects.create(sku=guitar["SKU_ID"])
             idlist.append(guitar["SKU_ID"])
+
+    if(not idlist):
+        print("Ain't no guitar like that")
     
     return idlist
 
