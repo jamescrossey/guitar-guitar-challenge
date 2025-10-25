@@ -12,7 +12,20 @@
 {% endblock %}
 
 {% block body_block %}
-<div class="container">
-    guitar 1 is better
+<div class="header1">
+    Compare 2 products
+</div>
+
+<div class="Selection">
+    Select which products you would like to compare<br>
+    {% comment %} some sort of menu for selecting products {% endcomment %}
+</div>
+
+<div class="Dsiplay products">
+    {% comment %} Display each product the user has selected (1, 2, or none) {% endcomment %}
+
+    {% for product in Products %}
+    {% comment %} if selected product is same as 
+        {% if %}
 </div>
 {% endblock %}
