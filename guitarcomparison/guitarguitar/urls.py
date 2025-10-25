@@ -2,7 +2,7 @@ from django.urls import path
 from guitarguitar import views
 
 app_name = "guitarguitar"
-url_patterns = [
-    path('', views.index, name='index'),
 
+urlpatterns = [
+    path('', views.index, name='index'),
 ]
