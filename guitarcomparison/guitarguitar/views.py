@@ -1,7 +1,8 @@
-from django.shortcuts import render
-from models import Type, Guitars
+from django.shortcuts import render, redirect
+from .models import Guitars
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
+from django.urls import reverse
 
 
 SPOTIPY_CLIENT_ID = '38ef8b39fad049f8905aed6f791eddc2'
@@ -15,7 +16,6 @@ def index(request):
     artist2 = request.GET.get('artist2','')
     artist3 = request.GET.get('artist3','')
 
-    print("artist1: " + artist1 + "artist2: " + artist2 + "artist3: " + artist3)
     
     if (artist1 or artist2 or artist3):
         artists = [artist1, artist2, artist3]
@@ -29,14 +29,14 @@ def index(request):
         
         context_dict = {}
         context_dict['genres'] = genres
-        return render(request, 'guitarguitar/comparison.html', context=context_dict)
-    
+        return redirect(reverse('guitarguitar:comparison'))
+        
     return render(request, 'guitarguitar/index.html')
 
 
 def comparison(request):
 
-    products_list = Guitars.Objects.all()
+    products_list = Guitars.objects.all()
     types_list = Type.objects.all()
 
     sort_options = {
