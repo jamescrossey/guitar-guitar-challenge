@@ -1,4 +1,5 @@
 from django.shortcuts import render
+fr
 
 def home(request):
     context_dict = {}
