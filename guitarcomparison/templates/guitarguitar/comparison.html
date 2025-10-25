@@ -1,0 +1,13 @@
+{% block title %}Instruments{% endblock %}
+
+{% block content %}
+<div class="search-results">
+    <h1 class="section-title">Genres</h1>
+    <ul>
+        {% for genre in genres %}
+            <li>{{ genre }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblockk %}
+
