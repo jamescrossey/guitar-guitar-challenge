@@ -1,1 +1,27 @@
 {% block title %}Guitar Comparison{% endblock %}
+
+{% block content %}
+    <div class="search-container">
+        <form method="get" class="search_form">
+            <input type="text"
+                   name="artist1" 
+                   class="search-input"
+                   placeholder="Artist 1"
+                   value="{{ artist1 }}"
+                   autofocus>
+            <input type="text"
+                   name="artist1" 
+                   class="search-input"
+                   placeholder="Artist 1"
+                   value="{{ artist1 }}"
+                   autofocus>
+            <input type="text"
+                   name="artist1" 
+                   class="search-input"
+                   placeholder="Artist 1"
+                   value="{{ artist1 }}"
+                   autofocus>
+            <button type="submit" class="search-button"></button>
+        </form>
+    </div>
+{% endblock %}
