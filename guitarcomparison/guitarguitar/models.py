@@ -36,4 +36,4 @@ class Guitars(models.Model):
     glasgowQty = models.IntegerField(default=0)
     edinburghQty = models.IntegerField(default=0)
     newcastleQty = models.IntegerField(default=0)
-    type = models.ForeignKey(Type, on_delete=models.CASCADE)
+    
