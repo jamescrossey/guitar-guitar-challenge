@@ -14,25 +14,24 @@ def index(request):
     artist1 = request.GET.get('artist1','')
     artist2 = request.GET.get('artist2','')
     artist3 = request.GET.get('artist3','')
+
+    print("artist1: " + artist1 + "artist2: " + artist2 + "artist3: " + artist3)
     
     if (artist1 or artist2 or artist3):
         artists = [artist1, artist2, artist3]
         genres = set()
-        for i in range(3):
-            if artists[i]:
-                artist = artists[i]
+        for artist in artists:
+            if artist:
+                print(artist)
                 artist_genres = sp.search(artist,type="artist",limit=1)["artists"]["items"][0]["genres"]
                 print(artist_genres)
                 genres.update(artist_genres)
-        print(genres)
-        context = {'genres' : genres}
-        return render(request, 'guitarguitar/comparison.html')
-
-
-    context = {'artist1' : artist1,
-                'artist2' : artist2,
-                'artist3' : artist3}
-    return render(request, 'guitarguitar/index.html', context)
+        
+        context_dict = {}
+        context_dict['genres'] = genres
+        return render(request, 'guitarguitar/comparison.html', context=context_dict)
+    
+    return render(request, 'guitarguitar/index.html')
 
 
 def comparison(request):
@@ -68,3 +67,5 @@ def comparison(request):
                     'sort_options' : sort_options,
                     }
     return render(request, 'guitarguitar/comparison.html', context_dict)
+
+
