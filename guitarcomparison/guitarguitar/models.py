@@ -8,15 +8,14 @@ class Type(models.Model):
     type = models.CharField()
 
 
-#type = guitar names, 
 class matches(models.Model):
-    genre = models.ForeignKey(Genres)
-    type = models.ForeignKey(Type)
+    genre = models.ForeignKey(Genres, on_delete=models.CASCADE)
+    type = models.ForeignKey(Type, on_delete=models.CASCADE)
 
 class Guitars(models.Model):
     sku = models.CharField(primary_key=True)
     asn = models.CharField(null=True)
-    Category = models.CharField=()
+    Category = models.CharField()
     online = models.BinaryField()
     itemName = models.CharField()
     title = models.CharField(null=True)
