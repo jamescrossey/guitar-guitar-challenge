@@ -16,7 +16,7 @@ def findGuitar(guitarName):
     for guitar in guitars:
         if (guitarName.lower() in guitar["ItemName"].lower()):
             print(guitar["ItemName"])
-            nguitar = Guitars.objects.create(sku=guitar["SKU_ID"])
+            nguitar = Guitars.objects.create(sku=guitar["SKU_ID"], SalesPrice=guitar["SalesPrice"], colour=guitar["Colour"], pickup = guitar["Pickup"], BodyShape =guitar["BodyShape"], CreatedOn="2000-01-12", imageUrls=guitar["PictureMain"], rating=guitar["Rating"])
             idlist.append(guitar["SKU_ID"])
 
     if(not idlist):
