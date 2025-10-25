@@ -6,7 +6,7 @@ scope = "user-library-read"
 
 sp = spotipy.Spotify(auth_manager = SpotifyOAuth(client_id = '38ef8b39fad049f8905aed6f791eddc2',
                                                       client_secret = '02a6251fb74e4b80a8348d1d066f3cd3',
-                                                      redirect_uri = 'https://localhost/auth-response',
+                                                      redirect_uri = 'https://example.org/callback',
                                                       ))
 
 
