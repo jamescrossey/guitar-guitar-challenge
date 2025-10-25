@@ -1,17 +1,9 @@
 from django.db import models
 
-# Create your models here.
-class Genres(models.Model):
-    genre = models.CharField(default="N/A")
 
-class Type(models.Model):
-    type = models.CharField()
-
-
-#type = guitar names, 
 class matches(models.Model):
-    genre = models.ForeignKey(Genres, on_delete=models.CASCADE)
-    type = models.ForeignKey(Type, on_delete=models.CASCADE)
+    genre = models.TextField()
+    type = models.TextField()
 
 class Guitars(models.Model):
     sku = models.CharField(primary_key=True)

@@ -4,10 +4,36 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE','guitarcomparison.settings')
 
 django.setup()
 
-from guitarguitar.models import Guitars
+from guitarguitar.models import Guitars, matches
 
 def populateGuitars():
     print("function running")
+    
+    genre_list =["pop", "rock", "metal", "jazz", "blues", "classical", "punk", "country", "folk", "indie", "funk", "reggae", "grunge", "alternative", "shoegaze"]
+    genre_to_guitars = {
+    "pop": ["acoustic", "telecaster"],
+    "rock": ["stratocaster", "les paul", "sg"],
+    "metal": ["les paul", "flying v", "explorer"],
+    "jazz": ["classical", "casino", "semi-acoustic"],
+    "blues": ["acoustic"],
+    "classical": ["classical", "acoustic"],
+    "punk": ["les paul", "stratocaster"],
+    "folk": ["semi-acoustic", "acoustic", "stratocaster"],
+    "grunge": ["les paul", "SG", "mustang", "jaguar"],
+    "indie": ["telecaster", "mustang"],
+    "funk": ["stratocaster"],
+    "shoegaze": ["jazzmaster"],
+    "reggae": ["acoustic","stratocaster"],
+    "country": ["acoustic", "telecaster", "stratocaster"],
+    "alternative": ["jaguar", "semi-acoustic", "telecaster"]
+    }
+
+    
+    typelist = ["stratocaster","telecaster","les paul","SG","mustang","flying v","jaguar","jazzmaster","explorer","acoustic","classical","casino","semi-acoustic"]
+    for g in genre_list:
+        for t in genre_to_guitars[g]:
+            matches.objects.create(type=t, genre=g)
+    
     with urllib.request.urlopen("https://www.guitarguitar.co.uk/hackathon/products/") as url:
         guitars = json.loads(url.read().decode())
         
