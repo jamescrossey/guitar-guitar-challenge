@@ -2,13 +2,37 @@ from django.db import models
 
 # Create your models here.
 class Genres(models.Model):
-    genre = models.CharField()
+    genre = models.CharField(default="N/A")
 
-class Names(models.Model):
-    Names = models.CharField()
+class Type(models.Model):
+    type = models.CharField()
 
-class genresNames(models.Model):
+
+#type = guitar names, 
+class matches(models.Model):
     genre = models.ForeignKey(Genres)
-    names = models.ForeignKey(Names)
+    type = models.ForeignKey(Type)
 
-
+class Guitars(models.Model):
+    sku = models.CharField(primary_key=True)
+    asn = models.CharField(null=True)
+    Category = models.CharField=()
+    online = models.BinaryField()
+    itemName = models.CharField()
+    title = models.CharField(null=True)
+    brandName = models.CharField()
+    Description = models.CharField(null=True)
+    productDetail = models.TextField()
+    SalesPrice = models.DecimalField(decimal_places=2)
+    pictureMain = models.ImageField()
+    qtyInStock = models.IntegerField(default=0)
+    qtyOnOrder = models.IntegerField(default=0)
+    colour = models.IntegerField()
+    pickup = models.IntegerField()
+    BodyShape = models.IntegerField()
+    CreatedOn = models.DateField()
+    imageUrls = models.URLField(null=True)
+    rating = models.DecimalField(decimal_places=2)
+    glasgowQty = models.IntegerField(default=0)
+    edinburghQty = models.IntegerField(default=0)
+    newcastleQty = models.IntegerField(default=0)
