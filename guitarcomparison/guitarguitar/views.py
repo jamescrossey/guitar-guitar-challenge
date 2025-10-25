@@ -17,6 +17,7 @@ def index(request):
     artist2 = request.GET.get('artist2','')
     artist3 = request.GET.get('artist3','')
 
+    print("artist1: " + artist1 + "artist2: " + artist2 + "artist3: " + artist3)
     
     if (artist1 or artist2 or artist3):
         artists = [artist1, artist2, artist3]
