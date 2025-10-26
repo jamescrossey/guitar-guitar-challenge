@@ -8,6 +8,7 @@ body {
 }
 
 .guitarComparison { 
+    border-radius: 25px;
     text-shadow: 2px 2px #1A1818;
     color: #d67042;
     background-color: #292524;
@@ -57,6 +58,7 @@ label {
     background-color: #364255;
     margin-bottom: 2%;
     width: 100%;
+    color: #e3c3a3;
 }
 
 .input-container {
