@@ -1,21 +1,84 @@
 body {
-    background-color: #252D3A
+    margin: auto;
+    font-family: helvetica;
+    background-color: #252D3A;
+    border-left: 10px solid #364255;
+    border-right: 10px solid #364255;
+    border-bottom: 15px solid #364255;
+}
+
+.guitarComparison { 
+    text-shadow: 2px 2px #1A1818;
+    color: #d67042;
+    background-color: #292524;
+    text-align: center;
+}
+
+p {
+    font-size: 300%;
+}
+
+label {
+    font-size: 250%;
+}
+
+.box {
+    border-top: 10px solid #364255;
+    margin-top: 4%;
+    width: 100%;
+    height: 2.5%;
+    background-color: #d67042;
+}
+
+.label { 
+    display: flex;
+    justify-content: center;
+    border: 5px solid #364255;
+    margin: auto;
+    background-color: #e3c3a3;
+    color: #364255;
+    text-align: center;
+    height: 9vh;
+    width: 100%;
 }
 
 .search-container {
     position:absolute;
-    top: 50%;
+    width: 80%;
+    top: 42%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+.inputs {
+    height: 4vh;
+    text-align: center;
+    border: none;
+    background-color: #364255;
+    margin-bottom: 2%;
+    width: 100%;
+}
+
 .input-container {
+    padding-top: 2%;
+    width: 100%;
     border:red;
 }
 
-#Submit {
+.Submit {
     display: flex;
     justify-content: center;
     padding-top: 15px;
     
+}
+
+#submitButton {
+    width: 30%;
+    height: 5vh;
+    background-color: #BE7453;
+    border: 1px solid white;
+}
+
+#submitButton:hover {
+    background-color: #a15836;
 }

@@ -1,40 +1,46 @@
-{% block title %}Guitar Comparison{% endblock %}
 {% load static %}
 {% block css_block %}
 <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 {% endblock %}
 {% block content %}
+<div class="guitarComparison">
+    <p>Guitar Comparison<p>
+<div class="box">
     <div class="search-container">
         <form method="get" class="search_form">
-        <label>Enter Artists</label>
-            <div id="input-container">
+        <div class="label">
+            <label>Enter Artists</label>
+        </div>
+            <div class="input-container">
             <input type="text"
+                   class="inputs"
                    name="artist1" 
                    class="search-input"
                    placeholder="Artist 1"
                    value="{{ artist1 }}" 
-                   class="inputs"
                    autofocus>
                    <br>
             <input type="text"
+                   class="inputs"
                    name="artist2" 
                    class="search-input"
                    placeholder="Artist 2"
                    value="{{ artist2 }}" 
-                   class="inputs"
                    autofocus>
                    <br>
             <input type="text"
-                   name="artist3" 
+                   name="artist3"
+                   class="inputs"
                    class="search-input"
                    placeholder="Artist 3"
                    value="{{ artist3 }}" 
-                   class="inputs"
                    autofocus>
-        <div id="Submit">
-            <button type="submit" id="submitButton">submit</button>
+        <div class="Submit">
+            <button type="submit" id="submitButton">enter</button>
         </div>
             </div>
         </form>
     </div>
+</div>
+</div>
 {% endblock %}
