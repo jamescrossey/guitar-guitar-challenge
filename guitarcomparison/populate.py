@@ -44,6 +44,9 @@ def populateGuitars():
     typelist = ["stratocaster","telecaster","les paul","SG","mustang","flying v","jaguar","jazzmaster","explorer","acoustic","classical","casino","semi-acoustic"]
     for guitarName in typelist:
         for guitar in guitars:
+            new_detail = guitar["ProductDetail"]
+            new_detail = new_detail.replace("<p>","")
+            guitar["ProductDetail"] = new_detail.replace("</p>", "\n\n")
             if (guitarName.lower() in guitar["ItemName"].lower() and guitar["SKU_ID"] not in idlist):
                 print(guitar["ItemName"])
                 nguitar = Guitars.objects.create(sku=guitar["SKU_ID"], asn = guitar["ASN"], Category = guitar["Category"], online = str(guitar["Online"]), itemName = guitar["ItemName"], title = guitar["Title"], brandName = guitar["BrandName"], productDetail = guitar["ProductDetail"], SalesPrice=guitar["SalesPrice"], colour=guitar["Colour"], pickup = guitar["Pickup"], BodyShape =guitar["BodyShape"], CreatedOn="2000-01-12", pictureMain=guitar["PictureMain"], rating=guitar["Rating"],guitarType = guitarName)
