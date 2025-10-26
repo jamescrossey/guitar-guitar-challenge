@@ -13,20 +13,6 @@
     Compare 2 products
 </div>
 
-<!-- <div class="ProductTypeSelect">
-    <form method="get" id="productTypeForm">
-        <label for="productTypeSelect">Please select a product type</label>
-        <select name="type" id="productTypeSelect" onchange="this.form.submit()">
-            <option value="">-- All Types --</option>
-            {% for productType in types %}
-                <option value="{{ productType.id }}">
-                    {% if request.GET.type == productType.id|stringformat:"s" %}selected{% endif %}>
-                    {{ productType.type }}
-                </option>
-            {% endfor %}
-        </select>
-    </form>
-</div> -->
 
 <div class="products">
     {% if products%}
