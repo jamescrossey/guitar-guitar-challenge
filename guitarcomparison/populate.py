@@ -28,7 +28,7 @@ def populateGuitars():
     "reggae": ["acoustic","stratocaster"],
     "country": ["acoustic", "telecaster", "stratocaster"],
     "alternative rock": ["jaguar", "semi-acoustic", "telecaster"],
-    "dream pop": ["telecaster","epiphone","mustang"]
+    "dream pop": ["telecaster","casino","mustang"]
     }
 
     
