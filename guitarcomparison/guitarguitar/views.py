@@ -45,12 +45,49 @@ def comparison(request):
     else:
         products_list = Guitars.objects.all()
 
+    colour_map = {
+        1:"Red",
+        2:"Orange",
+        3:"Yellow",
+        4:"Green",
+        5:"Blue",
+        6:"Purple",
+        7:"Pink",
+        8:"Brown",
+        9:"Gold",
+        10:"Silver",
+        11:"Grey",
+        12:"Black",
+        13:"White",
+        14:"Natural",
+        15:"Multicolour"
+    }
 
-    all_guitars = Guitars.objects.all()
-    context_dict = {'products': products_list, 'genres': genres, 'guitars' : all_guitars}
+    body_map = {
+        1:"SStyle",
+        2:"TStyle",
+        3:"DoubleCut",
+        4:"OffSet",
+        5:"HollowBody",
+        6:"VStyle",
+        7:"SmallBody",
+        8:"Orchestral",
+        9:"GrandAuditorium",
+        10:"Dreadnought",
+        11:"Jumbo",
+        12:"Explorer",
+        13:"SingleCut",
+        14:"Combo",
+        15:"Head",
+        16:"Cabinet"
+    }
 
-    print("Products:", Guitars.objects.count())
-    print("Products list:", list(Guitars.objects.values_list('sku', flat=True)[:5]))
+    for product in products_list:
+        product.colour = colour_map.get(product.colour)
+        product.BodyShape = body_map.get(product.BodyShape)
+
+    context_dict = {'products': products_list, 'genres': genres}
+
     return render(request, 'guitarguitar/comparison.html', context_dict)
 
 
@@ -59,6 +96,48 @@ def compareTwo(request):
     id_list = [i.strip() for i in ids.split(',') if i.strip()]
 
     guitars = Guitars.objects.filter(sku__in=id_list)
+
+
+    colour_map = {
+        1:"Red",
+        2:"Orange",
+        3:"Yellow",
+        4:"Green",
+        5:"Blue",
+        6:"Purple",
+        7:"Pink",
+        8:"Brown",
+        9:"Gold",
+        10:"Silver",
+        11:"Grey",
+        12:"Black",
+        13:"White",
+        14:"Natural",
+        15:"Multicolour"
+    }
+
+    body_map = {
+        1:"SStyle",
+        2:"TStyle",
+        3:"DoubleCut",
+        4:"OffSet",
+        5:"HollowBody",
+        6:"VStyle",
+        7:"SmallBody",
+        8:"Orchestral",
+        9:"GrandAuditorium",
+        10:"Dreadnought",
+        11:"Jumbo",
+        12:"Explorer",
+        13:"SingleCut",
+        14:"Combo",
+        15:"Head",
+        16:"Cabinet"
+    }
+
+    for product in guitars:
+        product.colour = colour_map.get(product.colour)
+        product.BodyShape = body_map.get(product.BodyShape)
     context = {'guitars': guitars}
 
     return render(request, 'guitarguitar/compare2Products.html', context)
