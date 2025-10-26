@@ -17,10 +17,14 @@
 <div class="header1">
     Relevant Guitars
 </div>
-<<<<<<< HEAD
-=======
-{% endblock %}
->>>>>>> main
+
+<div>
+    <ul>
+        {% for genre in genres %}
+        <li>{{ genre }}</li>
+        {% endfor %}
+    </ul>
+</div>
 
 <div class="compare-button">
     <button id="compare-button" disabled>
