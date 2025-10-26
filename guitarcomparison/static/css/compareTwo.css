@@ -46,6 +46,7 @@ h1 {
 
 .value-row img {
     max-width: 180px;
+    max-height: 350px;
     height: auto;
     border-radius: 0;
 }
