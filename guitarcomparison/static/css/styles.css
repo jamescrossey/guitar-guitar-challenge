@@ -1,6 +1,6 @@
 body {
     margin: auto;
-    font-family: helvetica;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #252D3A;
     border-left: 10px solid #364255;
     border-right: 10px solid #364255;
@@ -10,7 +10,7 @@ body {
 .guitarComparison { 
     border-radius: 25px;
     text-shadow: 2px 2px #1A1818;
-    color: #d67042;
+    color: #E85D04;
     background-color: #292524;
     text-align: center;
 }
@@ -28,7 +28,7 @@ label {
     margin-top: 4%;
     width: 100%;
     height: 2.5%;
-    background-color: #d67042;
+    background-color: #E85D04;
 }
 
 .label { 
@@ -77,10 +77,10 @@ label {
 #submitButton {
     width: 30%;
     height: 5vh;
-    background-color: #BE7453;
+    background-color: #E85D04;
     border: 1px solid white;
 }
 
 #submitButton:hover {
-    background-color: #a15836;
+    background-color: #894526;
 }
