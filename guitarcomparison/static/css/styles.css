@@ -8,15 +8,16 @@ body {
 }
 
 .guitarComparison { 
-    border-radius: 25px;
+    font-weight: bold;
+    border-bottom: 4px solid #E85D04;
+    border-radius: 8px;
     text-shadow: 2px 2px #1A1818;
     color: #E85D04;
     background-color: #292524;
     text-align: center;
-}
+    font-size: 2rem;
+    margin-bottom: 2rem;
 
-p {
-    font-size: 300%;
 }
 
 label {
@@ -46,7 +47,7 @@ label {
 .search-container {
     position:absolute;
     width: 80%;
-    top: 42%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -83,4 +84,9 @@ label {
 
 #submitButton:hover {
     background-color: #894526;
+}
+#submitButton:disabled {
+    background-color: #444;
+    cursor: not-allowed;
+    box-shadow: none;
 }

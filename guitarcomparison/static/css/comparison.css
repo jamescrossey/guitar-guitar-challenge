@@ -1,9 +1,18 @@
 body {
-    background-color: #0B1622;
-    color: #EAEAEA;
+    border-left: 10px solid #364255;
+    border-right: 10px solid #364255;
+    border-bottom: 15px solid #364255;
+    background-color: #252D3A;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 2rem;
+    margin: auto;
+}
+
+.box {
+    border-top: 10px solid #364255;
+    margin-top: 4%;
+    width: 100%;
+    height: 2.5%;
+    border-bottom: 16px solid #E85D04;
 }
 
 .header1 {
@@ -11,7 +20,9 @@ body {
     font-size: 2rem;
     font-weight: bold;
     color: #E85D04;
-    background-color: #1B263B;
+    text-shadow: 2px 2px #1A1818;
+    color: #E85D04;
+    background-color: #292524;
     border-bottom: 4px solid #E85D04;
     padding: 1rem;
     border-radius: 8px;
