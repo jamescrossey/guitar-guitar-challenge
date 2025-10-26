@@ -22,9 +22,7 @@ def index(request):
         genres = set()
         for artist in artists:
             if artist:
-                print(artist)
                 artist_genres = sp.search(artist,type="artist",limit=1)["artists"]["items"][0]["genres"]
-                print(artist_genres)
                 genres.update(artist_genres)
         
         query_params = urlencode({'genres': ','.join(genres)})
