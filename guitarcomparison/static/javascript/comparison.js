@@ -1,6 +1,7 @@
 const selected = new Set();
 const compareButton = document.getElementById('compare-button');
 const productButtons = document.querySelectorAll('.compare-select');
+const homeButton = document.getElementById('home-button');
 
 productButtons.forEach(btn => {
 btn.addEventListener('click', () => {
@@ -37,5 +38,9 @@ compareButton.addEventListener('click', () => {
 if (selected.size === 2) {
     const ids = Array.from(selected).join(',');
     window.location.href = `/guitarguitar/compareTwoProducts/?ids=${ids}`;
-}
+    }
+});
+
+homeButton.addEventListener('click', () => {
+    window.location.href = `/guitarguitar/index/`;
 });
