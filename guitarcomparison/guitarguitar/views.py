@@ -55,6 +55,16 @@ def comparison(request):
     return render(request, 'guitarguitar/comparison.html', context_dict)
 
 
+def compareTwo(request):
+    ids = request.GET.get('ids', '')
+    id_list = [i.strip() for i in ids.split(',') if i.strip()]
+
+    guitars = Guitars.objects.filter(sku__in=id_list)
+    context = {'guitars': guitars}
+
+    return render(request, 'guitarguitar/compare2Products.html', context)
+
+
 def unused():
     # sort_options = {
     #     'price_asc': 'Cheapest First',

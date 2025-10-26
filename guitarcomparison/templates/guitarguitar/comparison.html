@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block script_block %}
+<script src="{% static 'javascript/comparison.js' %}" defer></script>
 {% endblock %}
 
 {% block body_block %}
@@ -13,6 +14,12 @@
     Compare 2 products
 </div>
 
+<div class="compare-button">
+    <button id="compare-button" disabled
+            class="bg-gray-400 text-white px-4 py-2 rounded cursor-not-allowed">
+    Compare Items
+    </button>
+</div>
 
 <div class="products">
     {% if products%}
@@ -34,6 +41,12 @@
                     <p>Colour: {{ product.colour }}</p>
                     <p>Body Shape: {{ product.BodyShape }}</p>
                     <p>Quantity in stock: {{ product.qtyInStock }}</p>
+                </div>
+                <div class="compare-buttons">
+                    <button class="compare-select bg-blue-500 text-white px-3 py-1 rounded mt-2"
+                        data-sku="{{ product.sku }}">
+                        Select for Compare
+                    </button>
                 </div>
             </div>
         {% endfor %}

@@ -1,0 +1,79 @@
+{% extends 'Guitarguitar/Base.html' %}
+{% load static %}
+
+{% block title_block %}
+    CompareTwoProducts
+{% endblock %}
+
+{% block css_block %}
+<link rel="stylesheet" href="{% static 'css/compareTwo.css' %}">
+{% endblock %}
+
+{% block body_block %}
+<div class="compare-container">
+    <h1>Compare Guitars</h1>
+
+    <div class="back-button-container">
+        <a href="javascript:history.back()" class="back-button">Back to results</a>
+    </div>
+
+    {% if guitars|length == 2 %}
+      <div class="feature-row">Images</div>
+      <div class="value-row">
+        <div><img src="{{ guitars.0.pictureMain.url }}" alt="{{ guitars.0.itemName }}"></div>
+        <div><img src="{{ guitars.1.pictureMain.url }}" alt="{{ guitars.1.itemName }}"></div>
+      </div>
+
+      <div class="feature-row">Model</div>
+      <div class="value-row product-text">
+        <div>{{ guitars.0.itemName }}</div>
+        <div>{{ guitars.1.itemName }}</div>
+      </div>
+
+      <div class="feature-row">Brand</div>
+      <div class="value-row product-text">
+        <div>{{ guitars.0.brandName }}</div>
+        <div>{{ guitars.1.brandName }}</div>
+      </div>
+
+      <div class="feature-row">Price</div>
+      <div class="value-row product-text">
+        <div>£{{ guitars.0.SalesPrice }}</div>
+        <div>£{{ guitars.1.SalesPrice }}</div>
+      </div>
+
+      <div class="feature-row">Rating</div>
+      <div class="value-row product-text">
+        <div>{{ guitars.0.rating }}</div>
+        <div>{{ guitars.1.rating }}</div>
+      </div>
+
+      <div class="feature-row">Colour</div>
+      <div class="value-row product-text">
+        <div>{{ guitars.0.colour }}</div>
+        <div>{{ guitars.1.colour }}</div>
+      </div>
+
+      <div class="feature-row">Body Shape</div>
+      <div class="value-row product-text">
+        <div>{{ guitars.0.BodyShape }}</div>
+        <div>{{ guitars.1.BodyShape }}</div>
+      </div>
+
+      <div class="feature-row">In Stock</div>
+      <div class="value-row product-text">
+        <div>{{ guitars.0.qtyInStock }}</div>
+        <div>{{ guitars.1.qtyInStock }}</div>
+      </div>
+
+      <div class="feature-row">Product Details</div>
+      <div class="value-row product-text">
+        <div>{{ guitars.0.productDetail }}</div>
+        <div>{{ guitars.1.productDetail }}</div>
+      </div>
+
+    {% else %}
+      <p>Please select exactly two guitars to compare.</p>
+    {% endif %}
+</div>
+{% endblock %}
