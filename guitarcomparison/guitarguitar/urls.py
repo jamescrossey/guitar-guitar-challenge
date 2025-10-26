@@ -5,4 +5,5 @@ app_name = "guitarguitar"
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('comparison/', views.comparison, name='comparison')
 ]

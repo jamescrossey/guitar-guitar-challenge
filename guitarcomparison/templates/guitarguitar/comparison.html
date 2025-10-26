@@ -6,7 +6,6 @@
 {% endblock %}
 
 {% block script_block %}
-<script src="{% static 'javascript/productTypes.js' %}" defer></script>
 {% endblock %}
 
 {% block body_block %}
@@ -14,7 +13,7 @@
     Compare 2 products
 </div>
 
-<div class="ProductTypeSelect">
+<!-- <div class="ProductTypeSelect">
     <form method="get" id="productTypeForm">
         <label for="productTypeSelect">Please select a product type</label>
         <select name="type" id="productTypeSelect" onchange="this.form.submit()">
@@ -27,31 +26,55 @@
             {% endfor %}
         </select>
     </form>
-</div>
+</div> -->
 
 <div class="products">
-    {% for product in products %}
-        <div class="product-card">
-            <div class="product-image">
-                <img src="{{ product.pictureMain.url }}" alt="{{ product.itemName }}">
-            </div>
-            <div class="product-info">
-                <h2>{{ product.itemName }}</h2>
-                <div class="rating">
-                    {% if product.rating %}
-                        <span>Rating: {{ product.rating|floatformat:2 }}</span>
-                    {% else %}
-                        <span>No ratings yet</span>
-                    {% endif %}
+    {% if products%}
+        {% for product in products %}
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="{{ product.pictureMain.url }}" alt="{{ product.itemName }}">
                 </div>
-                <p>Price: £{{ product.SalesPrice }}</p>
-                <p>Colour: {{ product.colour }}</p>
-                <p>Body Shape: {{ product.BodyShape }}</p>
-                <p>Quantity in stock: {{ product.qtyInStock }}</p>
+                <div class="product-info">
+                    <h2>{{ product.itemName }}</h2>
+                    <div class="rating">
+                        {% if product.rating %}
+                            <span>Rating: {{ product.rating|floatformat:2 }}</span>
+                        {% else %}
+                            <span>No ratings yet</span>
+                        {% endif %}
+                    </div>
+                    <p>Price: £{{ product.SalesPrice }}</p>
+                    <p>Colour: {{ product.colour }}</p>
+                    <p>Body Shape: {{ product.BodyShape }}</p>
+                    <p>Quantity in stock: {{ product.qtyInStock }}</p>
+                </div>
             </div>
+        {% endfor %}
+    {% else %}
+        <p>No products available for this type.</p><br>
+        <p>Here is a list of all our products</p>
+        {% for product in guitars %}
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="{{ product.pictureMain.url }}" alt="{{ product.itemName }}">
+                </div>
+                <div class="product-info">
+                    <h2>{{ product.itemName }}</h2>
+                    <div class="rating">
+                        {% if product.rating %}
+                            <span>Rating: {{ product.rating|floatformat:2 }}</span>
+                        {% else %}
+                            <span>No ratings yet</span>
+                        {% endif %}
+                    </div>
+                    <p>Price: £{{ product.SalesPrice }}</p>
+                    <p>Colour: {{ product.colour }}</p>
+                    <p>Body Shape: {{ product.BodyShape }}</p>
+                    <p>Quantity in stock: {{ product.qtyInStock }}</p>
+                </div>
         </div>
-    {% empty %}
-        <p>No products available for this type.</p>
-    {% endfor %}
+        {% endfor %}
+    {% endif %}
 </div>
 {% endblock %}
