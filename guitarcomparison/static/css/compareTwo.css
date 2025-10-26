@@ -1,72 +1,78 @@
 body {
-        font-family: Arial, sans-serif;
-        background-color: #fafafa;
-        margin: 0;
-        padding: 2rem;
-    }
+    background-color: #0B1622;
+    color: #EAEAEA;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 2rem;
+}
 
-    .compare-container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0;
-        background: none;
-        border: none;
-        box-shadow: none; 
-    }
+.compare-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
 
-    h1 {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
+h1 {
+    text-align: center;
+    color: #E85D04;
+    background-color: #1B263B;
+    border-bottom: 4px solid #E85D04;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
 
-    .back-button {
-        display: inline-block;
-        margin-bottom: 2rem;
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: white;
-        border-radius: 6px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background 0.2s ease;
-        text-align: center;
-    }
+.feature-row {
+    background-color: #F7C59F;
+    color: #0B1622;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px;
+    margin-top: 1.2rem;
+    border-radius: 0;
+}
 
-    .back-button:hover {
-        background-color: #0056b3;
-    }
+.value-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: #1B263B;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    border: 1px solid #E85D04;
+}
 
-    .back-button-container {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
+.value-row img {
+    max-width: 180px;
+    height: auto;
+    border-radius: 0;
+}
 
-    .feature-row {
-        background-color: #f2f2f2;
-        text-align: center;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #333;
-        padding: 10px;
-        border-radius: 6px;
-        margin-top: 1.2rem;
-    }
+.product-text {
+    color: #F7C59F;
+    font-weight: 500;
+}
 
-    .value-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-        align-items: start;
-        text-align: center;
-        padding: 1rem 0;
-        border-bottom: 1px solid #eee;
-    }
+.back-button-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
 
-    .value-row img {
-        max-width: 200px;
-        border-radius: 10px;
-    }
-    
-    .product-text {
-        color: #444;
-    }
+.back-button {
+    display: inline-block;
+    background-color: #E85D04;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #ff6a13;
+}

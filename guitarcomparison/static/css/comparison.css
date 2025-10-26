@@ -1,38 +1,63 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fafafa;
+    background-color: #0B1622;
+    color: #EAEAEA;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 2rem;
 }
 
-h1 {
+.header1 {
     text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #E85D04;
+    background-color: #1B263B;
+    border-bottom: 4px solid #E85D04;
+    padding: 1rem;
+    border-radius: 8px;
     margin-bottom: 2rem;
-    color: #222;
 }
 
-.product-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+.compare-button {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#compare-button {
+    background-color: #E85D04;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+#compare-button:hover:not(:disabled) {
+    background-color: #ff6a13;
+}
+
+#compare-button:disabled {
+    background-color: #444;
+    cursor: not-allowed;
 }
 
 .product-card {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 1.5rem;
-    background: #fff;
-    padding: 1rem 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #1B263B;
+    border: 2px solid #E85D04;
+    border-radius: 0px;
+    padding: 0.5rem 0.8rem;
+    margin-bottom: 1rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    min-height: 200px;
 }
 
 .product-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.01);
+    box-shadow: 0 0 10px rgba(232, 93, 4, 0.4);
 }
 
 .product-image {
@@ -41,7 +66,6 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
     margin-right: 1.5rem;
 }
 
@@ -57,56 +81,34 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.product-name {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #111;
-    margin-bottom: 0.5rem;
+    text-align: left;
 }
 
 .product-info p {
-    margin: 0.25rem 0;
-    color: #333;
+    margin: 8px 0;
 }
 
-.compare-buttons {
-    align-self: flex-start;
-    margin-top: 0.75rem;
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.2s ease;
-}
-
-.compare-buttons:hover {
-    background-color: #0056b3;
-}
-
-.compare-select,
-.compare-select:focus,
-.compare-select:active {
-    outline: none;
-    box-shadow: none;
+.product-name {
+    font-size: 1.2rem;
+    color: #F7C59F;
+    margin-bottom: 0.5rem;
 }
 
 .compare-select {
-    background-color: #3b82f6;
+    background-color: #E85D04;
     border: none;
-    color: white;
+    color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 6px;
-    font-weight: 500;
+    font-weight: bold;
     cursor: pointer;
     transition: background 0.2s ease;
+    align-self: start;
+    margin-top: 0.8rem;
 }
 
 .compare-select:hover {
-    background-color: #2563eb;
+    background-color: #ff6a13;
 }
 
 .compare-select.selected {
