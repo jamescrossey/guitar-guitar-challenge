@@ -9,9 +9,11 @@ from guitarguitar.models import Guitars, matches
 def populateGuitars():
     print("function running")
     
-    genre_list =["pop", "rock", "metal", "jazz", "blues", "classical", "punk", "country", "folk", "indie", "funk", "reggae", "grunge", "alternative", "shoegaze"]
+    genre_list =["pop", "slowcore", "noise rock","rock", "metal", "jazz", "blues", "classical", "punk", "country", "folk", "indie", "funk", "reggae", "grunge", "alternative rock", "shoegaze", "dream pop"]
     genre_to_guitars = {
     "pop": ["acoustic", "telecaster"],
+    "slowcore":["mustang","jaguar"],
+    "noise rock":["sg","stratocaster"]
     "rock": ["stratocaster", "les paul", "sg"],
     "metal": ["les paul", "flying v", "explorer"],
     "jazz": ["classical", "casino", "semi-acoustic"],
@@ -25,7 +27,8 @@ def populateGuitars():
     "shoegaze": ["jazzmaster"],
     "reggae": ["acoustic","stratocaster"],
     "country": ["acoustic", "telecaster", "stratocaster"],
-    "alternative": ["jaguar", "semi-acoustic", "telecaster"]
+    "alternative rock": ["jaguar", "semi-acoustic", "telecaster"],
+    "dream pop": ["telecaster","epiphone","mustang"]
     }
 
     
