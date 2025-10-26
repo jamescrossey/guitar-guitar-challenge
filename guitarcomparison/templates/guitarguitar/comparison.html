@@ -5,53 +5,92 @@
     Compare
 {% endblock %}
 
+{% block css_block %}
+<link rel="stylesheet" href="{% static 'css/comparison.css' %}">
+{% endblock %}
+
 {% block script_block %}
-<script src="{% static 'javascript/productTypes.js' %}" defer></script>
+<script src="{% static 'javascript/comparison.js' %}" defer></script>
 {% endblock %}
 
 {% block body_block %}
 <div class="header1">
-    Compare 2 products
+    Relevant Guitars
 </div>
 
-<div class="ProductTypeSelect">
-    <form method="get" id="productTypeForm">
-        <label for="productTypeSelect">Please select a product type</label>
-        <select name="type" id="productTypeSelect" onchange="this.form.submit()">
-            <option value="">-- All Types --</option>
-            {% for productType in types %}
-                <option value="{{ productType.id }}">
-                    {% if request.GET.type == productType.id|stringformat:"s" %}selected{% endif %}>
-                    {{ productType.type }}
-                </option>
-            {% endfor %}
-        </select>
-    </form>
+<div class="compare-button">
+    <button id="compare-button" disabled>
+    Compare Items
+    </button>
 </div>
 
 <div class="products">
-    {% for product in products %}
+    {% if products%}
+        {% for product in products %}
         <div class="product-card">
             <div class="product-image">
                 <img src="{{ product.pictureMain.url }}" alt="{{ product.itemName }}">
             </div>
+
             <div class="product-info">
-                <h2>{{ product.itemName }}</h2>
-                <div class="rating">
-                    {% if product.rating %}
-                        <span>Rating: {{ product.rating|floatformat:2 }}</span>
-                    {% else %}
-                        <span>No ratings yet</span>
-                    {% endif %}
+                <h2 class="product-name">{{ product.itemName }}</h2>
+
+                <p><strong>Brand:</strong> {{ product.brandName }}</p>
+                <p><strong>Price:</strong> £{{ product.SalesPrice }}</p>
+
+                {% if product.rating %}
+                    <p><strong>Rating:</strong> {{ product.rating|floatformat:1 }}</p>
+                {% else %}
+                    <p><strong>Rating:</strong> No ratings yet</p>
+                {% endif %}
+
+                <p><strong>Colour:</strong> {{ product.colour }}</p>
+                <p><strong>Body Shape:</strong> {{ product.BodyShape }}</p>
+                <p><strong>Stock:</strong> {{ product.qtyInStock }}</p>
+
+                <div class="compare-buttons">
+                    <button class="compare-select bg-blue-500 text-white px-3 py-1 rounded mt-2"
+                        data-sku="{{ product.sku }}">
+                        Select for Compare
+                    </button>
                 </div>
-                <p>Price: £{{ product.SalesPrice }}</p>
-                <p>Colour: {{ product.colour }}</p>
-                <p>Body Shape: {{ product.BodyShape }}</p>
-                <p>Quantity in stock: {{ product.qtyInStock }}</p>
             </div>
         </div>
-    {% empty %}
-        <p>No products available for this type.</p>
-    {% endfor %}
+        {% endfor %}
+    {% else %}
+        <p>No products available for this type.</p><br>
+        <p>Here is a list of all our products</p>
+        {% for product in guitars %}
+        <div class="product-card">
+            <div class="product-image">
+                <img src="{{ product.pictureMain.url }}" alt="{{ product.itemName }}">
+            </div>
+
+            <div class="product-info">
+                <h2 class="product-name">{{ product.itemName }}</h2>
+
+                <p><strong>Brand:</strong> {{ product.brandName }}</p>
+                <p><strong>Price:</strong> £{{ product.SalesPrice }}</p>
+
+                {% if product.rating %}
+                    <p><strong>Rating:</strong> {{ product.rating|floatformat:1 }}</p>
+                {% else %}
+                    <p><strong>Rating:</strong> No ratings yet</p>
+                {% endif %}
+
+                <p><strong>Colour:</strong> {{ product.colour }}</p>
+                <p><strong>Body Shape:</strong> {{ product.BodyShape }}</p>
+                <p><strong>Stock:</strong> {{ product.qtyInStock }}</p>
+
+                <div class="compare-buttons">
+                    <button class="compare-select bg-blue-500 text-white px-3 py-1 rounded mt-2"
+                        data-sku="{{ product.sku }}">
+                        Select for Compare
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
 </div>
 {% endblock %}

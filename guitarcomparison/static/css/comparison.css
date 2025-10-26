@@ -1,0 +1,121 @@
+body {
+    background-color: #0B1622;
+    color: #EAEAEA;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 2rem;
+}
+
+.header1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #E85D04;
+    background-color: #1B263B;
+    border-bottom: 4px solid #E85D04;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.compare-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+#compare-button {
+    background-color: #E85D04;
+    color: #fff;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background 0.2s ease;
+}
+
+#compare-button:hover:not(:disabled) {
+    background-color: #ff6a13;
+    transform: scale(1.1);
+}
+
+#compare-button:disabled {
+    background-color: #444;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.product-card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #1B263B;
+    border: 2px solid #E85D04;
+    border-radius: 0px;
+    padding: 0.5rem 0.8rem;
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 10px rgba(232, 93, 4, 0.4);
+}
+
+.product-image {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.product-info p {
+    margin: 8px 0;
+}
+
+.product-name {
+    font-size: 1.2rem;
+    color: #F7C59F;
+    margin-bottom: 0.5rem;
+}
+
+.compare-select {
+    background-color: #E85D04;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    align-self: start;
+    margin-top: 0.8rem;
+}
+
+.compare-select:hover {
+    background-color: #ff6a13;
+}
+
+.compare-select.selected {
+    background-color: #10b981;
+}
