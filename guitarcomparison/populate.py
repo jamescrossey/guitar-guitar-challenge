@@ -13,7 +13,7 @@ def populateGuitars():
     genre_to_guitars = {
     "pop": ["acoustic", "telecaster"],
     "slowcore":["mustang","jaguar"],
-    "noise rock":["sg","stratocaster"]
+    "noise rock":["sg","stratocaster"],
     "rock": ["stratocaster", "les paul", "sg"],
     "metal": ["les paul", "flying v", "explorer"],
     "jazz": ["classical", "casino", "semi-acoustic"],
