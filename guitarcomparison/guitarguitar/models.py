@@ -26,5 +26,5 @@ class Guitars(models.Model):
     glasgowQty = models.IntegerField(default=0)
     edinburghQty = models.IntegerField(default=0)
     newcastleQty = models.IntegerField(default=0)
-    guitarType = models.TextField() 
+    guitarType = models.TextField(null=True) 
     

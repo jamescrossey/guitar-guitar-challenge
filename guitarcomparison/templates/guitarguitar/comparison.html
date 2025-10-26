@@ -1,4 +1,4 @@
-{% extends 'Guitarguitar/Base.html' %}
+{% extends 'guitarguitar/Base.html' %}
 {% load static %}
 
 {% block title_block %}
@@ -16,6 +16,14 @@
 {% block body_block %}
 <div class="header1">
     Relevant Guitars
+</div>
+
+<div>
+    <ul>
+        {% for genre in genres %}
+        <li>{{ genre }}</li>
+        {% endfor %}
+    </ul>
 </div>
 
 <div class="compare-button">
